@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Track Order</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #e0dede;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            
+        }
+        #track-order {
+            background-color: #f8f8f8;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 400px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 1);
+        }
+
+        #track-order h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 20px;
+            color: #333;
+        }
+
+        #track-order form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        #track-order label {
+            font-size: 14px;
+            color: #555;
+        }
+
+        #track-order input {
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        #track-order button {
+            padding: 10px;
+            font-size: 16px;
+            background-color: #ff6f61;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #track-order button:hover {
+            background-color: #e65b50;
+        }
+
+        #map h3 {
+            text-align: center;
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        #map {
+            display: none;
+            margin-top: 20px;
+        }
+
+        #timer {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+            text-align: center;
+        }
+    </style>
+    <script>
+        function startTimer(duration, display) {
+            var timer = duration, minutes, seconds;
+            setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = "Time remaining: " + minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    timer = 0;
+                }
+            }, 1000);
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("track-button").addEventListener("click", function() {
+                const orderId = document.getElementById("order-id").value;
+                if (orderId) {
+                    document.getElementById("map").style.display = "block";
+                    var tenMinutes = 60 * 10;
+                    var display = document.querySelector('#timer');
+                    startTimer(tenMinutes, display);
+                } else {
+                    alert("Please enter a valid Order ID.");
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <section id="track-order">
+        <h2>Track Your Order</h2>
+        <form id="track-form">
+            <label for="order-id">Enter Order ID:</label>
+            <input type="text" id="order-id" name="order-id" placeholder="e.g., 12345">
+            <button type="button" id="track-button">Track Order</button>
+        </form>
+        <div id="map">
+            <h3>Order Location</h3>
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509578!2d144.95373531531646!3d-37.8162797797517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577c6b85276956a!2sFed%20Square!5e0!3m2!1sen!2sau!4v1632304228383!5m2!1sen!2sau" 
+                width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        <div id="timer">Time remaining: 10:00</div>
+    </section>
+</body>
+</html>

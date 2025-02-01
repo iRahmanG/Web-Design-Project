@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* ----------------------Final DELIVERY -----------------------------------*/
+        .info
+        {
+            padding: 40px;
+            border-radius: 15px;
+            width: 560px;
+            box-shadow: 0px 2px 2px 2px rgba(0,0,0,0.1);
+            background-color: rgb(241, 211, 173);;
+            
+        }
+        .cart
+        {
+            width: 460px;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0px 2px 2px 2px rgba(0,0,0,0.1);
+            background-color: rgb(241, 211, 173);
+        }
+        #fname,#email,#street,#city,#state,#zip-code,#country,#phone,#lname
+        {
+            height: 30px;
+            border-radius: 5px;
+            border: solid 1.5px rgba(73, 72, 72, 0.66);
+            background-color: rgb(241, 211, 173);
+            
+        }
+        .table tr td
+        {
+            padding: 10px 150px 0px 10px;
+        }
+        .Del-Paisa
+        {
+            display: flex;
+            /* flex-direction: column; */
+        }
+        body{
+            background-color: rgba(255, 255, 255, 0.426);
+        }
+        .delivery-top{
+            display: flex;
+            /* flex-direction: column; */
+            justify-content: space-between;
+            margin-right: 100px;
+            padding: 30px;
+        }
+        .delivery-main
+        {
+            display: flex;
+            flex-direction: column;
+            padding: 40px;
+            justify-content: space-around;
+            border-radius: 15px;
+            background-color: rgba(230, 255, 255, 0.777);
+            padding: 10px 10px 70px 10px;
+        }
+        
+         /* ----------------------Final DELIVERY -----------------------------------*/
+    </style>
+</head>
+<body>
+    <!-- /* ----------------------Final DELIVERY -----------------------------------*/ -->
+    <div class="delivey-top">
+        <div>
+            <h1>Delivery</h1>
+        </div>
+        <div>
+            <a href="index.html" ><img src="image\cancel.png" style="height: 30px; " alt=""></a>
+        </div>
+    </div>
+
+    <div class="Del-Paisa">
+
+        <div class="delivery-main">
+            <div class="info">
+                <h1>Delivery Information</h1>
+                <div >
+                    <div >
+                        <input style="width: 250px;" type="text" width="50px" name="Fname" placeholder="First name" id="fname" >
+                        <input type="text" style="width: 250px;" name="Lname" placeholder="Last name" id="lname">
+                    </div>
+            
+                    <br>
+            
+                    <div >
+                        <input  type="email" style="width: 512px;" name="email" placeholder="Email adress" id="email" >
+                    </div>
+            
+                    <br>
+            
+                    <div >
+                        <input type="text" style="width: 512px;" name="Street" id="street" placeholder="Street">
+                    </div>
+            
+                    <br>
+            
+                    <div c>
+                        <input type="text" style="width: 250px;" name="City" id="city" placeholder="City">
+                        <input type="text" style="width: 250px;" name="state" id="state" placeholder="State">
+                    </div>
+            
+                    <br>
+                    <div >
+                        <input type="text" style="width: 250px;" name="Zip-code" id="zip-code" placeholder="Zip Code">
+                        <input type="text" style="width: 250px;" name="country" id="country" placeholder="Country">
+                    </div>
+            
+                    <br>
+            
+                    <div >
+                        <input type="tel" style="width: 512px;" name="phone" id="phone" placeholder="Phone">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        
+        <div class="delivery-main">
+            <div class="cart">
+                <span id="cart-tot"><h1>Cart Totals</h1></span>
+                <table class="table">
+                    <tr>
+                        <td>
+                            Subtotal
+                        </td>
+                        <td>
+                            <p>&#8377; 275</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Delivery Fee
+                        </td>
+                        <td>
+                            <p>&#8377; 30</p>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Total</td>
+                        <td> &#8377; 310</td>
+                    </tr>
+                </table>
+                <span id="proToPay">
+                         <a href="payment-gateway.html"><button style="background-color: rgb(67, 225, 46); color: rgb(247, 247, 247); border: 0px ; padding: 10px; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-size: 15px; font-weight: bolder; margin: 100px; padding-left: 30px; padding-right: 30px; border-radius: 10px;">Proceed to Payment</button></a>
+                </span>
+        
+            </div>
+        </div>
+    </div>
+    <!-- /* ----------------------Final DELIVERY -----------------------------------*/ -->
+</body>
+</html>

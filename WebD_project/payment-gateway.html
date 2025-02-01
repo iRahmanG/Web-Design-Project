@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Gateway</title>
+    
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    
+    .payment-container {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        width: 400px;
+    }
+    
+    h2 {
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    
+    .payment-method {
+        margin-bottom: 15px;
+    }
+    
+    .payment-method label {
+        font-size: 14px;
+        font-weight: bold;
+        display: block;
+        margin-bottom: 10px;
+    }
+    
+    .payment-options {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .payment-options input[type="radio"] {
+        margin-right: 5px;
+    }
+    
+    .card-icons {
+        margin-bottom: 15px;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .card-info,
+    .expiry-cvv div {
+        margin-bottom: 15px;
+    }
+    
+    .card-info input,
+    .expiry-cvv input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        margin-top: 5px;
+    }
+    
+    .expiry-cvv {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .save-card {
+        margin-bottom: 15px;
+    }
+    
+    .save-card input {
+        margin-right: 10px;
+    }
+    
+    .total-amount {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    .pay-button button {
+        width: 100%;
+        padding: 15px;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    
+    .pay-button button:hover {
+        background-color: #218838;
+    }
+    
+    .privacy-policy {
+        font-size: 12px;
+        text-align: center;
+    }
+    
+    .privacy-policy a {
+        color: #007bff;
+        text-decoration: none;
+    }
+    
+    .privacy-policy a:hover {
+        text-decoration: underline;
+    }
+    </style
+</head>
+<body>
+    <div class="payment-container">
+        <h2>Payment</h2>
+        <form action="#" method="post">
+            <div class="payment-method">
+                <label for="payment-method">Pay With:</label>
+                <div class="payment-options">
+                    <input type="radio" id="card" name="payment-method" value="card" checked>
+                    <label for="card">Card</label>
+                    <input type="radio" id="bank-transfer" name="payment-method" value="bank-transfer">
+                    <label for="bank-transfer">Bank Transfer</label>
+                    <input type="radio" id="cryptocurrency" name="payment-method" value="cryptocurrency">
+                    <label for="upi">UPI</label>
+                </div>
+            </div>
+            <div class="card-icons">
+                <img src="payment logo/visa logo.jpg" style="height: 50px;" alt="Visa">
+                <img src="payment logo/Mastercard-Logo.wine.png" style="height: 50px;" alt="Mastercard">
+            </div>
+            <div class="card-info">
+                <label for="card-number">Card Number</label>
+                <input type="text" id="card-number" name="card-number" placeholder="5399 0000 0000 0000">
+            </div>
+            <div class="expiry-cvv">
+                <div>
+                    <label for="expiry-date">Expiration Date</label>
+                    <input type="text" id="expiry-date" name="expiry-date" placeholder="MM/YY">
+                </div>
+                <div>
+                    <label for="cvv">CVV</label>
+                    <input type="text" id="cvv" name="cvv" placeholder="***">
+                </div>
+            </div>
+            <div class="save-card">
+                <input type="checkbox" id="save-card" name="save-card">
+                <label for="save-card">Save card details</label>
+            </div>
+            <div class="total-amount">
+                <p>Your total: <strong>Rs 310</strong></p>
+            </div>
+            <div class="pay-button">
+                <button type="submit">Pay Rs 310</button>
+            </div>
+            <p class="privacy-policy">Your personal data will be used to process your order, support your experience, and for other purposes described in our <a href="privacyPolicy.html">privacy policy</a>.</p>
+        </form>
+    </div>
+</body>
+</html>

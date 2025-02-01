@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1c1c2b;
+            color: #fff;
+            text-align: center;
+        }
+
+        .pricing-container {
+            padding: 50px 20px;
+        }
+
+        .pricing-container h1 {
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+        }
+
+        .pricing-container p {
+            font-size: 1rem;
+            color: #b0b0b0;
+            margin-bottom: 40px;
+        }
+
+        .pricing-plans {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .plan {
+            background: #2d2d3f;
+            border-radius: 10px;
+            padding: 20px;
+            width: 250px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .plan h2 {
+            font-size: 1.5rem;
+            margin: 20px 0;
+        }
+
+        .plan .price {
+            font-size: 2rem;
+            color: #ffcc00;
+            margin: 10px 0;
+        }
+
+        .plan ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .plan ul li {
+            margin: 10px 0;
+            color: #b0b0b0;
+        }
+
+        .plan .btn {
+            display: inline-block;
+            background: #ffcc00;
+            color: #1c1c2b;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .plan .btn:hover {
+            background: #e6b800;
+        }
+
+        .plan.basic {
+            background-color: #7b4fbd;
+        }
+
+        .plan.standard {
+            background-color: #3da36f;
+        }
+
+        .plan.plus {
+            background-color: #2579cb;
+        }
+
+        .plan.enterprise {
+            background-color: #d88731;
+        }
+    </style>
+</head>
+<body>
+    <div class="pricing-container">
+        <h1>Premium Plans</h1>
+        <p>Find below the best plans according to your needs.</p>
+        <div class="pricing-plans">
+            <div class="plan basic">
+                <h2>Basic</h2>
+                <p class="price">Price: &#8377; 99<br><small>PER MONTH</small></p>
+                <ul>
+                    <li>Up to 5 deliveries per month</li> 
+                    <li>Access to a wide range of local restaurants</li> 
+                    <li>Standard delivery times</li> 
+                    <li>Email support</li>
+                </ul>
+                <a href="#" class="btn">GET PLAN</a>
+            </div>
+            <div class="plan standard">
+                <h2>Standard</h2>
+                <p class="price">Price: &#8377;199<br><small>PER MONTH</small></p>
+                <ul>
+                    
+                    <li>Up to 12 deliveries per month</li> 
+                    <li>Priority delivery times</li> 
+                    <li>Access to exclusive partner restaurants</li> 
+                    <li>Email and phone support</li> 
+                    <li>Monthly discount coupons</li>
+                </ul>
+                <a href="#" class="btn">GET PLAN</a>
+            </div>
+            <div class="plan plus">
+                <h2>Plus</h2>
+                <p class="price">Price: &#8377;299<br><small>PER MONTH</small></p>
+                <ul>
+                    
+                    <li>Unlimited free deliveries</li> 
+                    <li>Express delivery times</li> 
+                    <li>Access to premium and partner restaurants</li> 
+                    <li>24/7 dedicated customer support</li> 
+                    <li>Monthly discount coupons and special offers</li> 
+                    
+                </ul>
+                <a href="#" class="btn">GET PLAN</a>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>

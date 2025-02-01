@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Eats</title>
+    <style>
+        body
+        {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: rgb(241, 241, 184);
+        }
+        .navbar
+        {
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+            border-radius: 5px;
+            margin: 20px;
+        }
+        .navbar .logo
+        {
+            font-size: 40px;
+            font-weight: bold;
+            color: rgb(159, 185, 9);
+        }
+        .navbar nav ul
+        {
+            list-style: none;
+            display: flex;
+            /* margin: 0; */
+            /* padding-left: 70px; */
+        }
+        .navbar nav ul li a
+        {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            padding-left: 80px;
+        }
+        #log
+        {
+            height: 50px;
+        }
+        .food h1
+        {
+            font-size: xx-large;
+            font-weight: 900;
+        }
+        #but
+        {
+            margin-top: 30px;
+        }
+        .image-b .back
+        {
+            height: 700px;
+            width: 100%;
+            border-radius: 30px;
+            position: relative;
+            box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.6);
+        }
+        .image-b
+        {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px;
+            background-color: #ffed47;
+            border-radius: 15px;
+        }
+        .ov
+        {
+            text-align: center;
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            justify-items: center;
+            padding-top: 125px;
+            /* background-image: linear-gradient(90deg, rgb(14, 38, 58), rgb(9, 36, 9) , rgb(48, 4, 48), rgb(5, 53, 75));
+            background-clip: text;
+            color: rgba(0, 0, 0, 0.1); */
+            font-size: x-large;
+        }
+        .page
+        {
+            position: fixed;
+            top: 0;
+            right: -30%;
+            width: 30%;
+            height: 100%;
+            background-color: #eaeaea;
+            padding: 50px;
+            box-sizing: border-box;
+            transition: right 0.5s ease;
+        }
+        #sig
+        {
+            margin-left: 250px;
+            padding-left: 0px;
+            margin-right: 0px;
+            background-color: rgb(187, 184, 12);
+            border-radius: 5px;
+            padding: 8px;
+            
+        }
+        .page:target
+        {
+            right: 0;
+        }
+        .login-container
+        {
+            background-color: white;
+            padding: 20px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 30%px;
+            box-sizing: border-box;
+        }
+        .login
+        {
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .log
+        {
+            font-size: 30px;
+            font-weight: bold;
+            color: #FF6347;
+        }
+        .abc
+        {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+        .abc a
+        {
+            color: #FF6347;
+            text-decoration: none;
+            margin-left: 5px;
+        }
+        .abc a:hover
+        {
+            text-decoration: underline;
+        }
+        .image
+        {
+            width: 100px;
+            height: 105px;
+            margin: 20px 0;
+        }
+        .user
+        {
+            
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .user input
+        {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .mob-lable
+        {
+            padding-top: 5px;
+            position: absolute;
+            top: -0px;
+            left: 10px;
+            background-color: white;
+            padding: 0 5px;
+            font-size: 12px;
+            color: #666;
+        }
+        ._button
+        {
+            margin-top: 20px;
+        }
+        .submit-button
+        {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #FF6347;
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .submit-button:hover
+        {
+            background-color: #FFA07A;
+        }
+        .term
+        {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+        .term a
+        {
+            color: #FF6347;
+            text-decoration: none;
+        }
+        .term a:hover
+        {
+            text-decoration: underline;
+        }
+        form ._button
+        {
+            display: flex;
+            justify-content: space-around;
+        }
+        .B
+        {
+            text-align: center;
+            display: flex;
+            background-color: rgba(255, 255, 255, 0.381);
+            overflow-x: scroll;
+            scrollbar-width: none;
+            padding: 40px;
+        }
+        .C
+        {
+            text-align: center;
+            display: flex;
+            background-color: rgba(255, 255, 255, 0.381);
+            overflow-x: scroll;
+            scrollbar-width: none;
+            padding: 40px;
+        }
+        .A
+        {
+            margin: 20px;
+            text-align: center;
+            background-color: #ffed47;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.7);
+            border-radius: 10px;
+            width: 100%;
+        }
+        .list
+        {
+            display: flex;
+            justify-content: center;
+            padding: 40px;
+        }
+        .A1
+        {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 24px;
+            letter-spacing: -0.6px;
+            color: rgba(2, 6, 12, 0.92);
+            padding: 20px;
+        }
+        .scroll
+        {
+            padding-top: 100px;
+        }
+        .back
+        {
+            display: flex;
+            justify-content: space-between;
+        }
+        .login-top
+        {
+            display: flex;
+            justify-content: space-between;
+        }
+         /* <!---Delivery OrderWaLA------> */
+        .Delivery-section-A
+        {
+            font-family: Arial, sans-serif;
+            margin-top: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .delivery-section
+        {
+            margin-top: 0%;
+            margin: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 30px;
+            position: relative;
+            box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.6);
+        }
+        .text-content
+        {
+            max-width: 50%;
+        }
+        .tagline
+        {
+            color: #f7c529;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        h1
+        {
+            font-size: 2.5em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .description
+        {
+            font-size: 1em;
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        .buttons
+        {
+            display: flex;
+            gap: 10px;
+        }
+        .btn
+        {
+            display: inline-block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            border-radius: 5px;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+        .order-food
+        {
+            background-color: #f7c529;
+        }
+        .order-food:hover
+        {
+            background-color: #e0b223;
+        }
+        .search-now
+        {
+            background-color: #333;
+        }
+        .search-now:hover
+        {
+            background-color: #555;
+        }
+        .image-content
+        {
+            max-width: 40%;
+        }
+        .image-content img
+        {
+            width: 100%;
+            height: auto;
+        }
+        /* <!---Delivery OrderWaLA------> */
+        /*----------------------------- Foooter Section----------------- */
+        footer {
+            margin-top: 50px;
+            background-color: #4541415a;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            box-shadow: 0 2px 4px 2px rgba(28, 27, 27, 0.419);
+        }
+        footer div {
+            flex: 1;
+            margin: 10px;
+            min-width: 150px;
+        }
+        footer h3 {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        footer ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        footer ul li {
+            margin-bottom: 5px;
+        }
+        footer ul li a {
+            text-decoration: none;
+            color: #211212;
+        }
+        footer ul li a:hover {
+            text-decoration: underline;
+            
+        }
+        .social-links {
+            display: flex;
+            gap: 10px;
+        }
+        .social-links img {
+            width: 20px;
+            height: 20px;
+        }
+        footer p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+        footer a img {
+            width: 120px;
+            margin-right: 10px;
+        }
+        /* ---------------------Footer Section------------------ */
+        /* ----------------Category-------------- */
+        #Category
+        {
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .Category-table
+        {
+            display: flex;
+            justify-content: space-around;
+        }
+        .Category-option 
+        {
+            justify-content: space-around;
+            background-color: #eab93b;
+            padding: 30px;
+            width: 16%;
+            text-align: center;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.1s ease-in-out;
+        }
+        .Category-option:hover
+        {
+            transform: scale(1.19);
+        }
+        .Category-option h3
+        {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        .Category-option p
+        {
+            font-size: 1.1rem;
+            color: #ffed47;
+        }
+        #w
+        {
+            display: flex;
+        }
+        /* ------------------------Category--------------- */
+
+        /* ----------------------Final DELIVERY -----------------------------------*/
+        .info
+        {
+            padding: 40px;
+            width: 540px;
+            box-shadow: 0px 2px 2px 2px rgba(0,0,0,0.1);
+            padding-left: 25px;
+            background-color: rgb(241, 211, 173);;
+            
+        }
+        #fname,#email,#street,#city,#state,#zip-code,#country,#phone,#lname
+        {
+            height: 30px;
+            border-radius: 5px;
+            border: solid 1.5px rgba(73, 72, 72, 0.66);
+            background-color: rgb(241, 211, 173);
+            
+        }
+        .table tr td
+        {
+            padding: 10px 150px 0px 10px;
+        }
+        .Del-Paisa
+        {
+            display: flex;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 50px;
+            background-color: white;
+            padding: 60px;
+            box-shadow: 0px 2px 4px 4px rgba(0,0,0,0.1);
+        }
+        .cart
+        {
+            margin-top: 40px;
+            margin-left: 180px;
+            box-shadow: 0px 2px 2px 2px rgba(0,0,0,0.1);
+            padding-left: 25px;
+            background-color: rgb(241, 211, 173);
+        }
+        body{
+            background-color: rgba(255, 255, 255, 0.426);
+        }
+         /* ----------------------Final DELIVERY -----------------------------------*/
+    </style>
+</head>
+<body>
+
+
+    <div class="navbar">
+
+
+        <img src="image\logo.png" alt="" id="log" >
+        <div class="logo">
+            City Eats
+        </div>
+        <nav class="oo">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="partener.html">Be a partener with us</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="#help">Help</a></li>
+                <li><a href="#signin" id="sig">Sign In</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <main id="main-context">
+        
+        <div class="image-b">
+                
+                <div class="back">
+                    <div class="r-back">
+                        <img src="image\r-img.png" height="650px" alt="">
+                    </div>
+                    <div class="l-back">
+                        <img src="image\l-img.png" height="650px" alt="">
+                    </div>
+
+                </div>
+
+                <div class="ov">
+                   <span style="font-size: xx-large;"><h1 >Order your <br/> favourite food here.</h1></span> 
+                    <p>
+                        Choose form a diverse menu featuring a delectable array of dishes <br>
+                        crafte with finest ingredients and culinary expertise. Our mission <br>
+                        is to satisfy your cravings and elevate your dinig experience, <br>
+                        one delicious meal at a time.
+                    </p>
+                </div>
+            </div>
+                
+            <div>
+                <div id="signin" class="page">
+                    <div class="login-container">
+
+                        <div class="login">
+                            <span class="icon"></span>
+                            <div class="login-top">
+                                <div class="log">Login</div>
+                                <div>
+                                    <a class="close-button" href="#"> <img src="image\cancel.png" style="height: 30px; width: 30px; border-radius: 50px;"  alt="Close"></a>
+                                </div>
+                            </div>
+                            <div class="abc">
+                                or
+                                <a href="#signup" class="creat-account">Create an account</a>
+                            </div>
+                        </div>
+                        <form>
+                            <div class="user">
+                                <input type="tel" name="mobile" id="mobile" tabindex="1" maxlength="10" autocomplete="off" required placeholder="Phone Number">
+                                <label class="mob-lable" for="mobile"></label>
+                            </div>
+        
+                            <div class="user">
+                                <input type="password" name="pwd" id="pwd" tabindex="1" maxlength="10" autocomplete="off" placeholder="Enter your password">
+                                <label class="pwd-labe" for="pwd"></label>
+                            </div>
+        
+                            <div class="_button">
+                                <a class="submit-button" href="#" >Login</a>
+                            </div>
+                            <div class="term">
+                                By clicking on Login, I accept the
+                                <a class="t-and-c" href="#">Terms & Conditions</a>
+                                &amp;
+                                <a class="privacy" href="#">Privacy Policy</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+        
+                <div id="signup" class="page">
+                    <div class="login-container">
+                        <div class="login">
+                            <span class="icon"></span>
+                            <div class="login-top">
+                                <div class="log">Sign Up</div>
+                                <div>
+                                    <a class="close-button" href="#"> <img src="image\cancel.png" style="height: 30px; width: 30px; border-radius: 50px;"  alt="Close"></a>
+                                </div>
+                            </div>
+                                <div class="abc">
+                                    or
+                                    <a href="#signin" class="creat-account">Login to your account</a>
+                                </div>
+                        </div>
+                        <form>
+                            <div class="user">
+                                <label for="name"></label>
+                                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                            </div>
+
+                            <div class="user">
+                                <label for="email"></label>
+                                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                            </div>
+
+                            <div class="user">
+                                <label for="phone"></label>
+                                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required pattern="[0-9]{10}" title="Please enter a valid 10-digit phone number.">
+                            </div>
+
+
+                            <div class="user">
+                                <label for="password"></label>
+                                <input type="password" id="password" name="password" placeholder="Create a password" required>
+                            </div>
+
+
+                            <div class="user">
+                                <label for="confirm-password"></label>
+                                <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+                            </div>
+
+                            <div class="_button">
+                                <a class="submit-button" href="#" >Continue</a>
+                            </div>
+                                
+                            <div class="term">
+                                By clicking on Login, I accept the
+                                <a class="t-and-c" href="#">Terms & Conditions</a>
+                                &amp;
+                                <a class="privacy" href="#">Privacy Policy</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        <div class="scroll">
+            <!---Delivery OrderWaLA------>
+            <div class="Delivery-section-A">
+                <div class="delivery-section">
+                    <div class="text-content">
+                        <p class="tagline">DINE IN OR TAKE AWAY</p>
+                        <h1>Get Your Order 24/7 Right At Your Doorsteps</h1>
+                        <p class="description">
+                              Plant-based diets may offer an advantage over those that are not plant-based with respect to prevention and management of diabetes. The Adventist health studies found that vegetarians have approximately half the risk of developing diabetes.
+                        </p>
+                        <div class="buttons">
+                            <a href="#here" class="btn order-food">Order Food</a>
+                            <a href="#" class="btn search-now">Search Now</a>
+                        </div>
+                    </div>
+
+                    <div class="image-content">
+                        <img src="image\image-1.jpg" alt="Delivery Illustration">
+                    </div>
+                </div>
+            </div>
+            <!---Delivery OrderWaLA------>
+                
+                
+            <!-- /* ------------------------Category--------------- */ -->
+            <section id="Category">
+                <div class="Category-table">
+                    <div class="Category-option" id="w">
+                        <div>
+                            <img src="image\burger.jpg" alt="" style="height: 45px; border-radius: 15px;">
+                        </div>
+                        <div>
+                            <h3 style="margin-top: 1px;">Fast Food</h3>
+                        </div>
+                
+                        <p></p>
+                    </div>
+                    <div class="Category-option" id="w">
+                        <div>
+                            <img src="image\pizza.jpg" alt="" style="height: 45px; border-radius: 15px;">
+                        </div>
+                        <div>
+                            <h3 style="margin-top: 1px;">Pizza</h3>
+                        </div>
+            
+                        <p></p>
+                    </div>
+                    <div class="Category-option" id="w">
+                        <div>
+                            <img src="image\fork-spoon.jpg" alt="" style="height: 45px; border-radius: 15px;">
+                        </div>
+                        <div>
+                            <h3 style="margin-top: 1px;">Dinner</h3>
+                        </div>
+                    </div>
+                    <div class="Category-option" id="w">
+                        <div>
+                            <img src="image\salad.jpg" alt="" style="height: 45px; border-radius: 15px;">
+                        </div>
+                        <div>
+                            <h3 style="margin-top: 1px;">Salad</h3>
+                        </div>
+                    </div>
+            
+                </div>
+            </section>
+
+            <!-- /* ------------------------Category--------------- */ -->
+            <div class="list" id="here">
+                <div class="A">
+
+                    <div class="A1">
+                        Order our best food options
+                    </div>
+
+                    <div class="B">
+                        <div>
+                            <a href="pizza.html" ><img  src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Pizza.png" alt="" style="height: 250px;"></a>
+                        </div>
+                        <div>
+                            <a href="burger.html" ><img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Burger.png" alt="" style="height: 250px;"></a>
+                        </div>
+                        <div>
+                            <a href="pastry.html" ><img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Pastry.png" alt="" style="height: 250px;"></a>
+                        </div>
+                        <div>
+                            <a href="pasta.html" ><img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Pasta.png" alt="" style="height: 250px;"></a>
+                        </div>
+                        <div>
+                            <a href="momo.html" ><img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Momo.png" alt="" style="height: 250px;"></a>
+                        </div>
+                        <div>
+                            <a href="chinese.html" ><img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Chinese.png" alt="" style="height: 250px;"></a>
+                        </div>
+                        <div>
+                            <a href="rolls.html" ><img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Rolls.png" alt="" style="height: 250px;"></a>
+                        </div>
+                        <div>
+                        <a href="dosa.html" ><img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Dosa.png" alt="" style="height: 250px;"></a>
+                        </div>
+                    </div>
+                    
+                    <div class="C">
+                        <div>
+                            <a href="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Pizza.png" ><img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Noodles.png" alt="" style="height: 250px;"></a>
+                        </div>
+                        <div>
+                            <a href="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Burger.png" ><img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Pav%20Bhaji.png" alt="" style="height: 250px;"></a>
+                        </div>
+                        <div>
+                            <a href="Chole.html" ><img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Chole%20Bhature.png" alt="" style="height: 250px;"></a>
+                        </div>
+                        <div>
+                            <a href="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Burger.png" ><img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Shake.png" alt="" style="height: 250px;"></a>
+                        </div>
+                        <div>
+                            <a href="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Momo.png" ><img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Salad.png" alt="" style="height: 250px;"></a>
+                        </div>
+                        <div>
+                            <a href="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Chinese.png" ><img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Patty.png" alt="" style="height: 250px;"></a>
+                        </div>
+                        <div>
+                            <a href="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Rolls.png" ><img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Idli.png" alt="" style="height: 250px;"></a>
+                        </div>
+                        <div>
+                            <a href="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Dosa.png" ><img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/Omelette.png" alt="" style="height: 250px;"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- /* ----------------------Final DELIVERY -----------------------------------*/ -->
+            <div class="Del-Paisa">
+                <div class="info">
+                    <h1>Delivery Information</h1>
+                <div >
+                <div >
+                    <input style="width: 250px;" type="text" width="50px" name="Fname" placeholder="First name" id="fname" >
+                    <input type="text" style="width: 250px;" name="Lname" placeholder="Last name" id="lname">
+                </div>
+                <br>
+                <div >
+                    <input  type="email" style="width: 512px;" name="email" placeholder="Email adress" id="email" >
+                </div>
+                <br>
+                <div >
+                    <input type="text" style="width: 512px;" name="Street" id="street" placeholder="Street">
+                </div>
+                <br>
+                <div c>
+                    <input type="text" style="width: 250px;" name="City" id="city" placeholder="City">
+                    <input type="text" style="width: 250px;" name="state" id="state" placeholder="State">
+                </div>
+                <br>
+                <div >
+                    <input type="text" style="width: 250px;" name="Zip-code" id="zip-code" placeholder="Zip Code">
+                    <input type="text" style="width: 250px;" name="country" id="country" placeholder="Country">
+                </div>
+                <br>
+                <div >
+                    <input type="tel" style="width: 512px;" name="phone" id="phone" placeholder="Phone">
+                </div>
+            </div>
+        </div>
+        <div class="cart">
+            <span id="cart-tot"><h1>Cart Totals</h1></span>
+            <table class="table">
+                <tr>
+                    <td>
+                        Subtotal
+                    </td>
+                    <td>
+                        $275
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Delivery Fee
+                    </td>
+                    <td>
+                        $35
+                    </td>
+                </tr>
+                <tr>
+                    <td>Total</td>
+                    <td>310</td>
+                </tr>
+            </table>
+            <span id="proToPay">
+                     <a href="#"><button style="background-color: rgb(67, 225, 46); color: rgb(247, 247, 247); border: 0px ; padding: 10px; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-size: 15px; font-weight: bolder; margin: 100px; padding-left: 30px; padding-right: 30px; border-radius: 10px;">Proceed to Payment</button></a>
+            </span>
+    
+        </div>
+    </div>
+    <!-- /* ----------------------Final DELIVERY -----------------------------------*/ -->
+    
+
+                <!-- --Footerrr-->
+                <footer>
+                    <h1  height="120px" style="margin-right: 50px; margin-top: -10px; font-family: Verdana, Geneva, Tahoma, sans-serif; color: darkgreen;">City Eats</h1>
+                    <div>
+           
+                    <h3>About Us</h3>
+                    <ul>
+                        <li><a href="#">Who We Are</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Work With Us</a></li>
+                        <li><a href="#">Report Fraud</a></li>
+                    </ul>
+                    </div>
+       
+                    <div>
+                    <h3>Learn More</h3>
+                    <ul>
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Security</a></li>
+                        <li><a href="#">Terms</a></li>
+                        <li><a href="#">Help Center</a></li>
+                    </ul>
+                    </div>
+                    <div>
+                    <h3>Contact Us</h3>
+                    <p>Email: cityeats0214@gmail.com</p>
+                    <p>Phone: +123-456-7890</p>
+                    </div>
+                    <div>
+                    <h3>Social Links</h3>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/"><img src="https://img.icons8.com/ios-filled/50/000000/linkedin.png" alt="LinkedIn"></a>
+                        <a href="https://www.instagram.com/"><img src="https://img.icons8.com/ios-filled/50/000000/instagram-new.png" alt="Instagram"></a>
+                        <a href="https://x.com/"><img src="https://img.icons8.com/ios-filled/50/000000/x.png" alt="Twitter"></a>
+                        <a href="https://www.facebook.com/"><img src="https://img.icons8.com/ios-filled/50/000000/facebook-new.png" alt="Facebook"></a>
+                    </div>
+                    </div>
+                </footer>
+                <!----Footerrr-->
+
+        </div>
+        <!-- scroll -->
+
+        <div class="top">
+            <div>
+                <a href="#"> <img src="image\gototop.avif" alt=""></a>
+            </div>
+        </div>
+
+    </main>
+</body>
+</html>
